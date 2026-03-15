@@ -21,7 +21,7 @@ function App() {
     offset: ["start start", "end end"]
   });
 
-  const metadataY = useTransform(scrollYProgress, [0, 1], [800, -800]);
+  const metadataY = useTransform(scrollYProgress, [0, 1], [600, -600]);
 
   React.useEffect(() => {
     const lenis = new Lenis();
@@ -44,7 +44,7 @@ function App() {
       <InstagramGrid />
 
       {/* Sticky Scroll Section for Events */}
-      <div ref={eventsRef} className="relative h-[180vh]">
+      <div ref={eventsRef} className="relative h-[140vh]">
         <div id="events" className="sticky top-0 h-screen bg-black overflow-hidden flex items-center justify-center">
           <div className="relative w-full h-full overflow-hidden">
             <div
@@ -53,37 +53,39 @@ function App() {
               }}
               className="absolute inset-0 bg-cover bg-center"
             />
+            {/* Background Image Overlay for Contrast */}
+            <div className="absolute inset-0 bg-black/20 z-10" />
             {/* Transparent interaction block */}
             <div className="absolute inset-0 z-10" />
 
             {/* Left Editorial Metadata */}
             <motion.div
               style={{ y: metadataY }}
-              className="absolute top-[35%] left-[10%] md:left-[22%] z-20 pointer-events-none"
+              className="absolute top-[30%] md:top-[35%] left-[8%] md:left-[22%] z-20 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,1)]"
             >
               <div className="text-white text-[14px] md:text-[24px] uppercase tracking-tight font-bold flex flex-col gap-1">
-                <span>Paris, FR</span>
+                <span className="text-[#fc6423ff]">Paris, FR</span>
                 <span className="font-medium text-[10px] md:text-[16px]">48.856623522 E</span>
-                <span className="text-[9px] md:text-[14px]">Alt // 35m MSL</span>
+                <span className="text-[8px] md:text-[14px] opacity-80">Alt // 35m MSL</span>
               </div>
             </motion.div>
 
             {/* Top Right Editorial Metadata */}
             <motion.div
               style={{ y: metadataY }}
-              className="absolute top-[70%] right-[20%] md:right-[28%] z-20 pointer-events-none hidden md:block"
+              className="absolute top-[75%] md:top-[70%] right-[20%] md:right-[28%] z-20 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,1)]"
             >
               <div className="text-white text-[16px] md:text-[24px] uppercase tracking-tight font-medium flex flex-col items-end gap-1 text-right">
-                <span>Global Community</span>
+                <span className="text-[#fc6423ff] font-bold">Global Community</span>
                 <span className="text-[12px] md:text-[18px]">EST. MMXXIV</span>
-                <span className="text-[10px] md:text-[15px]">1200+ Runners // 60+ Cities</span>
+                <span className="text-[9px] md:text-[15px] opacity-80">1200+ Runners // 60+ Cities</span>
               </div>
             </motion.div>
 
             {/* Main Vertical Title */}
-            <div className="absolute top-0 right-0 h-full flex items-center pr-6 md:pr-16 z-20 pointer-events-none">
+            <div className="absolute top-0 right-0 h-full flex items-center pr-4 md:pr-16 z-20 pointer-events-none">
               <h2
-                className="text-white text-5xl md:text-8xl font-black uppercase tracking-[0.2em] [writing-mode:vertical-rl] select-none opacity-90 drop-shadow-2xl origin-center"
+                className="text-white text-5xl md:text-8xl font-black uppercase tracking-[0.2em] [writing-mode:vertical-rl] select-none opacity-80 md:opacity-90 drop-shadow-2xl origin-center"
               >
                 Events
               </h2>
@@ -104,50 +106,80 @@ function App() {
         <MemberForm />
       </div> */}
 
-      <footer className="bg-black py-20 px-4 border-t border-white/5">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-end">
-            <div className="space-y-12">
-              <p className="text-sm opacity-60 uppercase tracking-widest">Media</p>
-              <div className="flex flex-wrap items-center gap-8 md:gap-16 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all">
+      <footer className="bg-black py-24 px-6 md:px-12 border-t border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-white/[0.02] via-transparent to-transparent pointer-events-none" />
+        
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-24">
+            {/* Left Section: Branding & Contact */}
+            <div className="space-y-12 max-w-md">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tighter mb-4">FRC</h3>
+                <p className="text-neutral-500 text-sm leading-relaxed max-w-xs">
+                  A global community for the builders, the founders, and the ambitious runners.
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600 font-bold">Contact</p>
                 <a
-                  href="https://www.inc.com/ava-mandoli/this-entrepreneur-has-60-co-founders-why-tim-tkachenko-wouldnt-have-it-any-other-way.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:hello@foundersrc.com"
+                  className="text-xl md:text-2xl font-medium block hover:text-[#fc6423ff] transition-colors duration-300"
                 >
-                  <img
-                    src={incLogo}
-                    alt="Inc"
-                    className="h-8 md:h-10 w-auto"
-                  />
-                </a>
-                <a
-                  href="https://www.theverge.com/c/23546117/ukraine-tech-workers-russia-war"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={vergeLogo}
-                    alt="The Verge"
-                    className="h-5 md:h-8 w-auto"
-                  />
+                  hello@foundersrc.com
                 </a>
               </div>
             </div>
 
-            <div className="text-right space-y-4">
-              <a
-                href="mailto:hello@foundersrc.com"
-                className="text-2xl md:text-3xl font-light underline hover:no-underline"
-              >
-                hello@foundersrc.com
-              </a>
-              <div className="flex justify-end gap-6 text-sm opacity-50 uppercase tracking-tighter mt-8">
-                <span>Chats</span>
-                <span>Instagram</span>
-                <span>Linkedin</span>
-                <span>Strava</span>
+            {/* Right Section: Media & Social */}
+            <div className="flex flex-col md:flex-row gap-16 md:gap-32">
+              {/* Media Section */}
+              <div className="space-y-6">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600 font-bold">As Seen In</p>
+                <div className="flex items-center gap-10 grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+                  <a
+                    href="https://www.inc.com/ava-mandoli/this-entrepreneur-has-60-co-founders-why-tim-tkachenko-wouldnt-have-it-any-other-way.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={incLogo} alt="Inc" className="h-6 md:h-7" />
+                  </a>
+                  <a
+                    href="https://www.theverge.com/c/23546117/ukraine-tech-workers-russia-war"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={vergeLogo} alt="The Verge" className="h-4 md:h-5" />
+                  </a>
+                </div>
               </div>
+
+              {/* Social Links */}
+              <div className="space-y-6 min-w-[140px]">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-600 font-bold">Follow Us</p>
+                <div className="grid grid-cols-2 md:flex md:flex-col gap-4">
+                  {['Instagram', 'Linkedin', 'Strava', 'Chats'].map((social) => (
+                    <a
+                      key={social}
+                      href="#"
+                      className="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-300 w-fit"
+                    >
+                      {social}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-[10px] text-neutral-600 font-medium uppercase tracking-[0.1em]">
+              © {new Date().getFullYear()} Founders Running Club. All rights reserved.
+            </p>
+            <div className="flex gap-8 text-[10px] text-neutral-600 font-medium uppercase tracking-[0.1em]">
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
             </div>
           </div>
         </div>
