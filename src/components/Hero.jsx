@@ -31,7 +31,7 @@ const Hero = () => {
     C 520 315, 540 360, 560 410 
     C 580 450, 610 450, 640 445 
     C 670 440, 690 425, 710 425 
-    C 740 425, 760 350, 800 340
+    C 740 425, 760 350, 850 340
   `.replace(/\n/g, ' ').trim();
 
   const drawTransition = {
@@ -79,8 +79,8 @@ const Hero = () => {
       {/* Animated Running Path */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
         <svg
-          viewBox="0 0 800 500"
-          className="w-full h-auto max-w-[1200px] opacity-100"
+          viewBox="0 0 900 500"
+          className="w-full h-auto max-w-[1400px] opacity-100"
           style={{ overflow: 'visible' }}
           preserveAspectRatio="xMidYMid meet"
         >
@@ -97,8 +97,8 @@ const Hero = () => {
             transition={drawTransition}
           />
 
-          {/* Location Pin dropped exactly at the correct end coordinate (800, 340) */}
-          <g transform="translate(776, 296)">
+          {/* Location Pin dropped exactly at the correct end coordinate (850, 340) */}
+          <g transform="translate(826, 296)">
             <motion.g
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
