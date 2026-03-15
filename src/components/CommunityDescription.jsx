@@ -36,7 +36,7 @@ const CommunityDescription = () => {
   }, [multiplier]);
 
   return (
-    <section className="bg-white text-black pt-12 pb-0 px-6 relative">
+    <section className="bg-white text-black pt-12 pb-0 px-6 relative overflow-hidden">
       <div className="mx-auto max-w-5xl">
         <div className="space-y-8 text-center">
           <p className="text-[32px] md:text-[48px] lg:text-[56px] leading-[1.1] font-light tracking-tight max-w-4xl mx-auto">

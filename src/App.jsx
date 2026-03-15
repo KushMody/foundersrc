@@ -61,10 +61,10 @@ function App() {
               style={{ y: metadataY }}
               className="absolute top-[35%] left-[10%] md:left-[22%] z-20 pointer-events-none"
             >
-              <div className="text-white text-[10px] md:text-[20px] uppercase tracking-tight font-bold flex flex-col gap-1">
+              <div className="text-white text-[14px] md:text-[24px] uppercase tracking-tight font-bold flex flex-col gap-1">
                 <span>Paris, FR</span>
-                <span className="font-medium text-[8px] md:text-[14px]">48.856623522 E</span>
-                <span className="text-[7px] md:text-[12px]">Alt // 35m MSL</span>
+                <span className="font-medium text-[10px] md:text-[16px]">48.856623522 E</span>
+                <span className="text-[9px] md:text-[14px]">Alt // 35m MSL</span>
               </div>
             </motion.div>
 
@@ -73,10 +73,10 @@ function App() {
               style={{ y: metadataY }}
               className="absolute top-[70%] right-[20%] md:right-[28%] z-20 pointer-events-none hidden md:block"
             >
-              <div className="text-white text-[12px] md:text-[20px] uppercase tracking-tight font-medium flex flex-col items-end gap-1 text-right">
+              <div className="text-white text-[16px] md:text-[24px] uppercase tracking-tight font-medium flex flex-col items-end gap-1 text-right">
                 <span>Global Community</span>
-                <span className="text-[10px] md:text-[15px]">EST. MMXXIV</span>
-                <span className="text-[9px] md:text-[13px]">1200+ Runners // 60+ Cities</span>
+                <span className="text-[12px] md:text-[18px]">EST. MMXXIV</span>
+                <span className="text-[10px] md:text-[15px]">1200+ Runners // 60+ Cities</span>
               </div>
             </motion.div>
 

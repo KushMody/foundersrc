@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logo from '../Photos/favicon.ico';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,17 +40,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-16 md:h-24 ${isScrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'}`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-full flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            src="https://static.tildacdn.net/tild3431-6165-4762-a261-633866373162/founders-running-clu.svg"
+            src={logo}
             alt="Founders Running Club Logo"
-            className="h-9 md:h-12 w-auto brightness-0 invert opacity-100 group-hover:opacity-100 transition-opacity"
+            className="h-12 md:h-16 w-auto opacity-100 group-hover:opacity-100 transition-opacity"
           />
         </a>
 
