@@ -35,7 +35,7 @@ const Hero = () => {
   `.replace(/\n/g, ' ').trim();
 
   const drawTransition = {
-    duration: 3,
+    duration: 2,
     ease: "linear",
     delay: 0.2
   };
@@ -51,25 +51,28 @@ const Hero = () => {
       {/* The main content text and button */}
       <div className="z-10 text-white max-w-4xl mx-auto flex flex-col items-center justify-center">
         <motion.h1
-          className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-4"
+          className="text-3xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 3.0 }}
         >
           A Global Community for{' '}
           <span className="text-neutral-500">Builders & Founders</span>
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto"
+          className="text-l md:text-2xl text-neutral-400 mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 1, delay: 3.7 }}
         >
           Join weekly Running + Networking events across 50+ cities. Connect with the world's most ambitious builders.
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 4.3, duration: 0.5 }}
           className="bg-white text-black text-lg font-bold px-10 py-5 rounded-full flex items-center gap-3 transition-transform hover:scale-105"
         >
           JOIN THE MOVEMENT <span className="text-xl">→</span>
@@ -77,7 +80,7 @@ const Hero = () => {
       </div>
 
       {/* Animated Running Path */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-end md:items-center justify-center pb-[20vh] md:pb-0">
         <svg
           viewBox="0 0 900 500"
           className="w-full h-auto max-w-[1400px] opacity-100"
@@ -92,17 +95,15 @@ const Hero = () => {
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={{ pathLength: 0, opacity: 1 }}
+            initial={{ pathLength: 1, opacity: 1 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            transition={drawTransition}
           />
 
           {/* Location Pin dropped exactly at the correct end coordinate (850, 340) */}
           <g transform="translate(826, 296)">
             <motion.g
-              initial={{ opacity: 0, y: -40 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3.2, duration: 0.6, type: "spring", bounce: 0.5 }}
             >
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Custom pin */}
@@ -119,7 +120,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 4.8, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
         <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent" />

@@ -22,8 +22,8 @@ const Partners = () => {
   const logos = [...partners, ...partners, ...partners];
 
   return (
-    <section className="bg-black py-20 md:py-40 border-y border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+    <section className="bg-black py-12 md:py-20 border-y border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
