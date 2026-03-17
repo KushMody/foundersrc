@@ -73,7 +73,10 @@ const Preloader = ({ loading }) => {
           src={logoVideo}
           autoPlay
           muted
+          loop
           playsInline
+          webkitPlaysInline
+          preload="auto"
           className="preloader-logo-video"
         />
         <img
