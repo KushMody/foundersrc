@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import logoVideo from '../Photos/founder src logo animation.mp4';
 import logoImage from '../Photos/founders-running-clu.png';
 import './Preloader.css';
 
 const Preloader = ({ loading }) => {
+  const preloaderVideoRef = useRef(null);
+
+  const handleVideoEnded = () => {
+    if (preloaderVideoRef.current) {
+      preloaderVideoRef.current.pause();
+      preloaderVideoRef.current.currentTime = preloaderVideoRef.current.duration;
+    }
+  }  
   const pathData = `
     M 0 490
     C 30 470, 50 460, 70 450
@@ -70,13 +79,14 @@ const Preloader = ({ loading }) => {
 
       <div className="preloader-logo-wrapper">
         <video
+          ref={preloaderVideoRef}
           src={logoVideo}
           autoPlay
           muted
-          loop
+          loop={false}
           playsInline
-          webkitPlaysInline
           preload="auto"
+          onEnded={handleVideoEnded}
           className="preloader-logo-video"
         />
         <img
